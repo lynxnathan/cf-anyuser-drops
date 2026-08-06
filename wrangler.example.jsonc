@@ -1,0 +1,16 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "anyuser-drops",
+  "main": "src/index.js",
+  "compatibility_date": "2026-08-06",
+  "workers_dev": true,
+  "vars": {
+    "SITE_TITLE": "my drops"
+  },
+  "r2_buckets": [
+    {
+      "binding": "DROPS",
+      "bucket_name": "anyuser-drops-files"
+    }
+  ]
+}

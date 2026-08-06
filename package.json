@@ -1,0 +1,35 @@
+{
+  "name": "anyuser-drops",
+  "version": "1.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Self-hosted authenticated file-drop service and Unix-friendly CLI",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18"
+  },
+  "keywords": [
+    "cloudflare-workers",
+    "cloudflare-r2",
+    "file-upload",
+    "cli"
+  ],
+  "bin": {
+    "anyuser-drops": "./bin/anyuser-drops.mjs",
+    "lynx-drop": "./bin/anyuser-drops.mjs",
+    "lynx-drops": "./bin/anyuser-drops.mjs"
+  },
+  "scripts": {
+    "deploy": "wrangler deploy",
+    "check": "node --check src/index.js && node --check bin/anyuser-drops.mjs",
+    "test": "node --test",
+    "test:fuzz": "node --test test/string-fuzz.test.mjs",
+    "test:e2e": "node scripts/e2e.mjs"
+  },
+  "devDependencies": {
+    "wrangler": "^4.119.0"
+  },
+  "overrides": {
+    "undici": "^7.29.0"
+  }
+}
